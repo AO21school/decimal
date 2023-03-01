@@ -7,6 +7,12 @@ int main(void) {
             suite_s21_mul(),
             suite_s21_div(),
             suite_s21_mod(),
+            suite_s21_is_less(void);
+            suite_s21_is_less_or_equal(void);
+            suite_s21_is_greater(void);
+            suite_s21_is_greater_or_equal(void);
+            suite_s21_is_equal(void);
+            suite_s21_is_not_equal(void);
             suite_s21_from_int_to_decimal(),
             suite_s21_from_float_to_decimal(),
             suite_s21_from_decimal_to_int(),
@@ -31,5 +37,10 @@ int main(void) {
     // Сигнализируем о том, что тестирование прошло неудачно.
     return EXIT_FAILURE;
   }
+
+  int a = -(128 + 5);
+  s21_decimal d = {0, 15, 0, 0};
+  s21_from_int_to_decimal(a, &d);
+  s21_dec_print(d);
   return EXIT_SUCCESS;
 }
